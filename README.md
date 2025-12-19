@@ -22,37 +22,6 @@ KeyMash is a real-time multiplayer typing game where players compete in various 
 *   **Backend/Database**: [Firebase Realtime Database](https://firebase.google.com/)
 *   **Icons**: [Lucide React](https://lucide.dev/)
 
-## 📦 Installation
-
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/keymash.git
-    cd keymash
-    ```
-
-2.  **Install dependencies**
-    ```bash
-    npm install
-    ```
-
-3.  **Configure Firebase**
-    *   Create a project at [Firebase Console](https://console.firebase.google.com/).
-    *   Enable **Realtime Database** (Start in Test Mode).
-    *   Create a `.env` file (or `.env.local`) in the root directory and add your config:
-    ```env
-    VITE_FIREBASE_API_KEY=your_api_key
-    VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-    VITE_FIREBASE_DATABASE_URL=https://your_project-default-rtdb.firebaseio.com
-    VITE_FIREBASE_PROJECT_ID=your_project_id
-    VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-    VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-    VITE_FIREBASE_APP_ID=your_app_id
-    ```
-
-4.  **Run Development Server**
-    ```bash
-    npm run dev
-    ```
 
 ## 🎮 Usage
 
