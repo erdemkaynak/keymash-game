@@ -62,9 +62,9 @@ KeyMash is a real-time multiplayer typing game where players compete in various 
 4.  **Start Game**: The host starts the game once everyone is ready.
 5.  **Win**: Be the fastest and most accurate to claim the trophy!
 
-## 🌐 Live Demo
+## 🌐 Repository
 
-[Link to Live Demo](https://keymash-demo.com) *(Replace with your value)*
+[https://github.com/erdemkaynak/keymash-game](https://github.com/erdemkaynak/keymash-game)
 
 ---
 *Developed with ❤️ using React & Firebase.*
