@@ -1,0 +1,5 @@
+{
+  "name": "keymash",
+  "description": "A hybrid competitive keyboard game combining Drag-and-Drop keyboard repair puzzles with high-speed typing races. Features a simulated multiplayer environment for immediate demonstration.",
+  "requestFramePermissions": []
+}

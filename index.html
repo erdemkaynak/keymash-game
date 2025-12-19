@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KeySmash!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Fredoka', 'sans-serif'],
+          },
+          colors: {
+            fun: {
+              blue: '#3B82F6',
+              darkblue: '#1D4ED8',
+              yellow: '#FCD34D',
+              orange: '#F59E0B',
+              green: '#4ADE80',
+              red: '#EF4444',
+              white: '#FFFFFF',
+              gray: '#F3F4F6'
+            }
+          },
+          boxShadow: {
+            'comic': '4px 4px 0px 0px rgba(0,0,0,0.2)',
+            'comic-hover': '2px 2px 0px 0px rgba(0,0,0,0.2)',
+          }
+        }
+      }
+    }
+  </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.2/",
+    "react/": "https://esm.sh/react@^19.2.2/",
+    "react": "https://esm.sh/react@^19.2.2",
+    "@dnd-kit/core": "https://esm.sh/@dnd-kit/core@^6.3.1",
+    "lucide-react": "https://esm.sh/lucide-react@^0.560.0"
+  }
+}
+</script>
+</head>
+
+<body class="bg-blue-500"
+  style="background-color: #3B82F6; background-image: radial-gradient(#60A5FA 2px, transparent 2px); background-size: 30px 30px;">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
