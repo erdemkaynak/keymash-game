@@ -16,7 +16,7 @@ function App() {
     const [myId, setMyId] = useState<string | null>(null);
     const [roomId, setRoomId] = useState<string | null>(null);
     const [lang, setLang] = useState<'EN' | 'TR'>('TR');
-    const [copiedLink, setCopiedLink] = useState(false);
+    const [copiedState, setCopiedState] = useState<'LINK' | 'CODE' | null>(null);
     const [error, setError] = useState<string | null>(null);
 
     // Synced Room State
@@ -354,10 +354,18 @@ function App() {
     };
 
     const handleCopyLink = () => {
-        const link = `${window.location.origin}?room=${roomId}`;
+        const link = `${window.location.origin}${window.location.pathname}?room=${roomId}`;
         navigator.clipboard.writeText(link);
-        setCopiedLink(true);
-        setTimeout(() => setCopiedLink(false), 2000);
+        setCopiedState('LINK');
+        setTimeout(() => setCopiedState(null), 2000);
+    };
+
+    const handleCopyCode = () => {
+        if (roomId) {
+            navigator.clipboard.writeText(roomId);
+            setCopiedState('CODE');
+            setTimeout(() => setCopiedState(null), 2000);
+        }
     };
 
     // --- RENDER HELPERS ---
@@ -454,22 +462,26 @@ function App() {
 
                         {/* Invite Section */}
                         <div className="mb-6 flex flex-col sm:flex-row gap-4">
-                            <div className="bg-gray-100 rounded-xl p-3 border-2 border-gray-200 flex-1 flex items-center justify-between">
+                            <div className="bg-gray-100 rounded-xl p-3 border-2 border-gray-200 flex-1 flex items-center justify-between cursor-pointer hover:bg-gray-200 transition-colors" onClick={handleCopyCode}>
                                 <div className="flex flex-col">
                                     <span className="text-[10px] uppercase font-black text-gray-400 tracking-wider">{t.room_code}</span>
                                     <span className="text-2xl font-black text-gray-800 tracking-widest">{room.id}</span>
                                 </div>
+                                <div className="text-gray-400 font-bold text-xs uppercase bg-white px-2 py-1 rounded border border-gray-200">
+                                    {copiedState === 'CODE' ? <Check size={14} className="text-green-500" /> : <Copy size={14} />}
+                                </div>
                             </div>
+
                             <div
-                                className="bg-blue-50 hover:bg-blue-100 cursor-pointer rounded-xl p-3 border-2 border-blue-100 flex items-center gap-3 transition-colors"
+                                className="bg-blue-50 hover:bg-blue-100 cursor-pointer rounded-xl p-3 border-2 border-blue-100 flex items-center gap-3 transition-colors flex-1"
                                 onClick={handleCopyLink}
                             >
                                 <div className="bg-white p-2 rounded-lg text-fun-blue">
-                                    {copiedLink ? <Check size={20} /> : <Copy size={20} />}
+                                    {copiedState === 'LINK' ? <Check size={20} className="text-green-500" /> : <Copy size={20} />}
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-[10px] uppercase font-black text-blue-400 tracking-wider">DAVET ET</span>
-                                    <span className="font-bold text-fun-blue text-sm">{copiedLink ? t.copied : t.copy_link}</span>
+                                    <span className="text-[10px] uppercase font-black text-blue-400 tracking-wider">{t.copy_link}</span>
+                                    <span className="font-bold text-fun-blue text-sm">{copiedState === 'LINK' ? t.link_copied : (window.innerWidth < 640 ? 'PAYLAŞ' : 'BAĞLANTI')}</span>
                                 </div>
                             </div>
                         </div>
