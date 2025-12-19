@@ -1,5 +1,8 @@
 # KeyMash - Multiplayer Typing Battle
 
+**
+this is an old project that i make 2 years ago just deployed to github 
+**
 
 https://keysmash-erdem-2025.web.app/
 
