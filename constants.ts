@@ -125,7 +125,7 @@ export const generateRounds = (total: number): RoundConfig[] => {
       roundNumber: i,
       mode: isOdd ? GameMode.REPAIR : GameMode.TYPING,
       description: isOdd ? 'htp_repair_desc' : 'htp_type_desc',
-      duration: isOdd ? 25 : 40
+      duration: isOdd ? 20 : 35
     });
   }
   return rounds;

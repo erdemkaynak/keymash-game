@@ -193,16 +193,24 @@ function App() {
                 update(ref(db), updates);
             }
 
-            // Check if ALL players are finished
-            const allFinished = Object.values(room.players).every((p: Player) => p.status === 'FINISHED');
-            if (allFinished) {
-                handleRoundEnd();
-                clearInterval(interval);
-            }
-
         }, 1000);
 
         return () => clearInterval(interval);
+    }, [isHost, room?.phase, room?.players]);
+
+    // --- Host Only: Check for All Finished (Humans + Bots) ---
+    useEffect(() => {
+        if (!isHost || !room || room.phase !== GamePhase.PLAYING) return;
+
+        const checkInterval = setInterval(() => {
+            const allFinished = Object.values(room.players).every((p: Player) => p.status === 'FINISHED');
+            if (allFinished) {
+                handleRoundEnd();
+                clearInterval(checkInterval);
+            }
+        }, 1000);
+
+        return () => clearInterval(checkInterval);
     }, [isHost, room?.phase, room?.players]);
 
 
