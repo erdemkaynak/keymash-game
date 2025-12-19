@@ -12,7 +12,29 @@ export const WORDS_POOL = {
   ],
   TR: [
     "ve", "bir", "bu", "da", "de", "için", "çok", "o", "en", "ne", "kadar", "olan", "ile", "var", "gibi", "sonra", "daha", "ama", "diye", "büyük", "yeni", "kendi", "her", "zaman", "yer", "yıl", "gün", "kendi", "sadece", "veya", "tüm", "şimdi", "yok", "geldi", "dedi", "iş", "ki", "son", "iyi", "oldu", "bunu", "şey", "ben", "zaten", "insan", "devlet", "zaman", "kendi", "biz", "iki", "fakat", "önce", "yok", "daha", "kendi", "bile", "için", "tarafından", "mi", "nasıl", "başka", "böyle", "yüzden", "aynı", "hiç", "kadar", "sadece", "biri", "diğer", "çünkü", "hemen", "söyle", "yapma", "olma", "bana", "seni", "bizi", "onlar", "bütün", "olmak", "taraf", "hayat", "ancak", "işte", "kendi", "bile", "yine", "göre", "tek", "dünya", "durum", "uzun", "gelmek", "el", "yol", "çocuk", "etmek", "söz", "onun", "yoksa", "konu", "hangi", "olur", "bugün", "adam", "önemli", "ara", "üzerine", "ses", "hep", "kabul", "yüz", "geri", "neden", "kadın", "üzerinde", "ülke", "almak", "yan", "kullanmak", "el", "hak", "dışında", "şekil", "baba", "vermek", "ilk", "göz", "gerek", "genç", "kitap", "dönem", "arkadaş", "ürün", "aile", "sistem", "bugün", "su", "türkiye", "birlikte", "saat", "gerçek", "ses", "kan", "sabah", "olay", "bölüm", "yazmak", "dönmek", "akşam", "hafta", "ay", "gece", "zor", "bulunmak", "ad", "sayı", "grup", "oda", "kısa", "an", "alt", "üst", "sorun", "kişi", "sıra"
+  ],
+  TR: [
+    "ve", "bir", "bu", "da", "de", "için", "çok", "o", "en", "ne", "kadar", "olan", "ile", "var", "gibi", "sonra", "daha", "ama", "diye", "büyük", "yeni", "kendi", "her", "zaman", "yer", "yıl", "gün", "kendi", "sadece", "veya", "tüm", "şimdi", "yok", "geldi", "dedi", "iş", "ki", "son", "iyi", "oldu", "bunu", "şey", "ben", "zaten", "insan", "devlet", "zaman", "kendi", "biz", "iki", "fakat", "önce", "yok", "daha", "kendi", "bile", "için", "tarafından", "mi", "nasıl", "başka", "böyle", "yüzden", "aynı", "hiç", "kadar", "sadece", "biri", "diğer", "çünkü", "hemen", "söyle", "yapma", "olma", "bana", "seni", "bizi", "onlar", "bütün", "olmak", "taraf", "hayat", "ancak", "işte", "kendi", "bile", "yine", "göre", "tek", "dünya", "durum", "uzun", "gelmek", "el", "yol", "çocuk", "etmek", "söz", "onun", "yoksa", "konu", "hangi", "olur", "bugün", "adam", "önemli", "ara", "üzerine", "ses", "hep", "kabul", "yüz", "geri", "neden", "kadın", "üzerinde", "ülke", "almak", "yan", "kullanmak", "el", "hak", "dışında", "şekil", "baba", "vermek", "ilk", "göz", "gerek", "genç", "kitap", "dönem", "arkadaş", "ürün", "aile", "sistem", "bugün", "su", "türkiye", "birlikte", "saat", "gerçek", "ses", "kan", "sabah", "olay", "bölüm", "yazmak", "dönmek", "akşam", "hafta", "ay", "gece", "zor", "bulunmak", "ad", "sayı", "grup", "oda", "kısa", "an", "alt", "üst", "sorun", "kişi", "sıra",
+    "kalem", "defter", "silgi", "okul", "sınıf", "öğrenci", "öğretmen", "ders", "bilgi", "soru", "cevap", "sınav", "başarı", "puan", "not", "liste", "kağıt", "masa", "sandalye", "tahta", "tebeşir", "bilgisayar", "ekran", "klavye", "fare", "internet", "yazılım", "kod", "program", "veri", "dosya", "klasör", "resim", "video", "müzik", "oyun", "uygulama", "telefon", "tablet", "şarj", "kablo", "pil", "elektrik", "lamba", "ışık", "karanlık", "güneş", "ay", "yıldız", "gökyüzü", "bulut", "yağmur", "kar", "rüzgar", "fırtına", "deniz", "okyanus", "göl", "nehir", "dere", "dağ", "tepe", "orman", "ağaç", "çiçek", "yaprak", "toprak", "taş", "kaya", "kum", "sahil", "yaz", "kış", "ilkbahar", "sonbahar", "mevsim", "sıcak", "soğuk", "ılık", "serin", "buz", "su", "ateş", "hava", "doğa", "hayvan", "kedi", "köpek", "kuş", "balık", "at", "inek", "koyun", "keçi", "tavuk", "horoz", "civciv", "yumurta", "süt", "peynir", "yoğurt", "tereyağı", "bal", "reçel", "zeytin", "ekmek", "simit", "poğaça", "börek", "pasta", "kek", "kurabiye", "çikolata", "şeker", "tuz", "biber", "yağ", "yemek", "kahvaltı", "öğle", "akşam", "gece", "yatmak", "uyumak", "uyanmak", "kalkmak", "koşmak", "yürümek", "oturmak", "durmak", "gitmek", "gelmek", "girmek", "çıkmak", "açmak", "kapatmak", "başlamak", "bitirmek", "kazanmak", "kaybetmek", "sevinmek", "üzülmek", "gülmek", "ağlamak", "sevmek", "nefret", "korkmak", "cesur", "güçlü", "zayıf", "hızlı", "yavaş", "kolay", "zor", "güzel", "çirkin", "temiz", "kirli", "yeni", "eski", "genç", "yaşlı", "uzun", "kısa", "kalın", "ince", "dolu", "boş", "açık", "kapalı", "akıllı", "aptal", "zeki", "çalışkan", "tembel", "mutlu", "mutsuz", "zengin", "fakir", "pahalı", "ucuz", "bedava", "para", "altın", "gümüş", "demir", "bakır", "cam", "plastik", "kağıt", "karton", "kutu", "şişe", "bardak", "tabak", "çatal", "kaşık", "bıçak", "tencere", "tava"
   ]
+};
+
+export const BOT_NAMES = [
+  "HızlıParmak", "KlavyeDelisi", "TuşCanavarı", "YazmaUstas", "BotAmca",
+  "SiberKedi", "RoboYazar", "TuşlarınEfendisi", "HızTutkunu", "ProGamer",
+  "YapayZeka", "KodYazan", "Piksel", "Gölge", "IşıkHızı",
+  "ÇılgınBot", "SessizYazar", "Kelimelik", "HarfAvcısı", "Daktilo"
+];
+
+export const AVATAR_STYLES = [
+  "adventurer", "avataaars", "big-ears", "big-smile", "bottts",
+  "croodles", "fun-emoji", "icons", "micah", "miniavs",
+  "open-peeps", "personas", "pixel-art"
+];
+
+export const getRandomAvatar = (seed: string) => {
+  const style = AVATAR_STYLES[Math.floor(Math.random() * AVATAR_STYLES.length)];
+  return `https://api.dicebear.com/7.x/${style}/svg?seed=${seed}`;
 };
 
 // Generates a random list of 100 words for the typing race

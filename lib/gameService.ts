@@ -1,7 +1,7 @@
 import { ref, set, get, update, onValue, push, child, remove, runTransaction, onDisconnect } from 'firebase/database';
 import { db } from './firebase';
 import { GamePhase, GameSettings, Player, Room, GameMode } from '../types';
-import { generateRounds, generateWordList } from '../constants';
+import { generateRounds, generateWordList, BOT_NAMES, getRandomAvatar } from '../constants';
 
 // Generate a random 6-character code
 const generateRoomCode = () => {
@@ -156,16 +156,10 @@ export const addBot = async (roomId: string) => {
     }
 
     const botId = 'bot-' + Math.random().toString(36).substr(2, 9);
-    const botName = 'Bot ' + Math.floor(Math.random() * 1000);
+    const botName = BOT_NAMES[Math.floor(Math.random() * BOT_NAMES.length)] + ` #${Math.floor(Math.random() * 100)}`;
 
     // Random Avatar
-    const avatar = JSON.stringify({
-        type: Math.floor(Math.random() * 6),
-        skin: Math.floor(Math.random() * 3), // assuming limits
-        eyes: Math.floor(Math.random() * 5),
-        mouth: Math.floor(Math.random() * 5),
-        acc: Math.floor(Math.random() * 3)
-    });
+    const avatar = getRandomAvatar(botName);
 
     const botPlayer: Player = {
         id: botId,

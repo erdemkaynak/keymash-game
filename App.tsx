@@ -9,9 +9,11 @@ import { KeyboardRepair } from './components/KeyboardRepair';
 import { TypingRace } from './components/TypingRace';
 import { Button } from './components/ui/Button';
 import { Avatar } from './components/ui/Avatar';
-import { Timer, Trophy, Zap, RefreshCw, Lock, Crown, Users, Flag, Target, Play, ArrowLeft, Copy, Check, X, Home, Plus } from 'lucide-react';
+import { Timer, Trophy, Zap, RefreshCw, Lock, Crown, Users, Flag, Target, Play, ArrowLeft, Copy, Check, X, Home, Plus, Volume2, VolumeX } from 'lucide-react';
+import { useAudio } from '@/hooks/useAudio';
 
 function App() {
+    const { isMuted, toggleMute, playSound, startBgm } = useAudio();
     // Local User State
     const [myId, setMyId] = useState<string | null>(null);
     const [roomId, setRoomId] = useState<string | null>(null);
@@ -37,6 +39,17 @@ function App() {
         };
         return () => bc.close();
     }, [roomId]);
+
+    // Initial Interaction for Audio
+    useEffect(() => {
+        const handleInteraction = () => startBgm();
+        document.addEventListener('click', handleInteraction);
+        document.addEventListener('keydown', handleInteraction);
+        return () => {
+            document.removeEventListener('click', handleInteraction);
+            document.removeEventListener('keydown', handleInteraction);
+        };
+    }, []);
 
     // Initial URL Check
     useEffect(() => {
@@ -509,7 +522,17 @@ function App() {
                                 </div>
                             ))}
 
-                            {/* Empty Slots or Add Bot */}
+                            {/* --- GLOBAL AUDIO TOGGLE --- */}
+                            <div className="fixed top-4 right-4 z-50">
+                                <button
+                                    onClick={() => { toggleMute(); playSound('click'); }}
+                                    className="bg-white p-3 rounded-full shadow-comic border-2 border-slate-900 hover:scale-110 transition-transform"
+                                >
+                                    {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+                                </button>
+                            </div>
+
+                            {/* --- GLOBAL NOTIFICATIONS / TAB WARNING --- */}
                             {Array.from({ length: (room.settings.maxPlayers || 4) - playersList.length }).map((_, i) => (
                                 <div key={`empty-${i}`} className="flex flex-col items-center justify-center p-4 bg-white rounded-2xl border-2 border-dashed border-gray-200 opacity-50 relative">
 
@@ -617,15 +640,17 @@ function App() {
                             <div className="w-full h-full flex items-center justify-center">
                                 {currentRound.mode === GameMode.REPAIR ? (
                                     <KeyboardRepair
-                                        onProgress={handleMyProgress}
-                                        onComplete={() => handleMyCompletion(0)}
+                                        onComplete={() => handleMyCompletion(100)}
+                                        onProgress={(p) => handleMyProgress(p)}
+                                        playSound={playSound}
                                     />
                                 ) : (
                                     <TypingRace
                                         words={room.words || []}
-                                        lang={lang}
-                                        onProgress={handleMyProgress}
+                                        lang={room.settings.lang || 'TR'} // Fallback
                                         onComplete={(wpm) => handleMyCompletion(wpm)}
+                                        onProgress={handleMyProgress}
+                                        playSound={playSound}
                                     />
                                 )}
                             </div>
